@@ -161,11 +161,10 @@ static NSDictionary *errorDictionary;
   return [self.purchaseRecord.allKeys containsObject:productId];
 }
 
--(NSDate*) expiryDateForProduct:(NSString*) productId {
-
+- (NSDate*)expiryDateForProduct:(NSString*) productId {
   NSNumber *expiresDateMs = self.purchaseRecord[productId];
   if ([expiresDateMs isKindOfClass:NSNull.class]) {
-    return NSDate.date;
+    return [NSDate distantFuture];
   } else {
     return [NSDate dateWithTimeIntervalSince1970:[expiresDateMs doubleValue] / 1000.0f];
   }
@@ -415,7 +414,8 @@ static NSDictionary *errorDictionary;
 
       [self.purchaseRecord enumerateKeysAndObjectsUsingBlock:^(NSString *productIdentifier, NSNumber *expiresDateMs, BOOL *stop) {
         if (![expiresDateMs isKindOfClass: [NSNull class]]) {
-          if ([[NSDate date] timeIntervalSince1970] > [expiresDateMs doubleValue]) {
+          // expiresDateMs is in milli-second, timeInterval is in second
+          if ([[NSDate date] timeIntervalSince1970] * 1000 > [expiresDateMs doubleValue] && ![productIdentifier isEqualToString: kOriginalAppVersionKey]) {
             [[NSNotificationCenter defaultCenter] postNotificationName:kMKStoreKitSubscriptionExpiredNotification object:productIdentifier];
           }
         }
