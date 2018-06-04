@@ -10,44 +10,55 @@ import UIKit
 
 class ViewController: UIViewController {
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    NSNotificationCenter.defaultCenter().addObserverForName(kMKStoreKitProductPurchasedNotification,
-      object: nil, queue: NSOperationQueue.mainQueue()) { (note) -> Void in
-        print ("Purchased product: \(note.object)")
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        NotificationCenter.default.addObserver(
+            forName: .mkStoreKitProductPurchased,
+            object: nil,
+            queue: OperationQueue.main,
+            using: { (note) -> Void in
+                print("Purchased product: \(note.object!)")
+            }
+        )
+
+        NotificationCenter.default.addObserver(
+            forName: .mkStoreKitDownloadCompleted,
+            object: nil,
+            queue: OperationQueue.main,
+            using: { (note) -> Void in
+                print("Downloaded product: \(note.userInfo!)")
+            }
+        )
+
+        NotificationCenter.default.addObserver(
+            forName: .mkStoreKitDownloadProgress,
+            object: nil,
+            queue: OperationQueue.main,
+            using: { (note) -> Void in
+                print("Downloading product: \(note.userInfo!)")
+            }
+        )
     }
 
-    NSNotificationCenter.defaultCenter().addObserverForName(kMKStoreKitDownloadCompletedNotification,
-      object: nil, queue: NSOperationQueue.mainQueue()) { (note) -> Void in
-        print ("Downloaded product: \(note.userInfo)")
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
 
-    NSNotificationCenter.defaultCenter().addObserverForName(kMKStoreKitDownloadProgressNotification,
-      object: nil, queue: NSOperationQueue.mainQueue()) { (note) -> Void in
-        print ("Downloading product: \(note.userInfo)")
+
+    @IBAction func buyConsumable(sender: AnyObject) {
+        MKStoreKit.shared().initiatePaymentRequestForProduct(withIdentifier: "com.steinlogic.iapdemo.consumable")
     }
 
-  }
+    @IBAction func buyNonConsumable(sender: AnyObject) {
+        MKStoreKit.shared().initiatePaymentRequestForProduct(withIdentifier: "com.steinlogic.iapdemo.nonconsumablenocontent")
+    }
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-  }
+    @IBAction func buySubscriptionWithContent(sender: AnyObject) {
+        MKStoreKit.shared().initiatePaymentRequestForProduct(withIdentifier: "com.steinlogic.iapdemo.quarterly")
+    }
 
+    @IBAction func buyNonConsumableWithoutContent(sender: AnyObject) {
+        MKStoreKit.shared().initiatePaymentRequestForProduct(withIdentifier: "com.steinlogic.iapdemo.nonconsumablewithcontent")
+    }
 
-  @IBAction func buyConsumable(sender: AnyObject) {
-    MKStoreKit.sharedKit().initiatePaymentRequestForProductWithIdentifier("com.steinlogic.iapdemo.consumable")
-  }
-
-  @IBAction func buyNonConsumable(sender: AnyObject) {
-    MKStoreKit.sharedKit().initiatePaymentRequestForProductWithIdentifier("com.steinlogic.iapdemo.nonconsumablenocontent")
-  }
-
-  @IBAction func buySubscriptionWithContent(sender: AnyObject) {
-    MKStoreKit.sharedKit().initiatePaymentRequestForProductWithIdentifier("com.steinlogic.iapdemo.quarterly")
-  }
-
-  @IBAction func buyNonConsumableWithoutContent(sender: AnyObject) {
-    MKStoreKit.sharedKit().initiatePaymentRequestForProductWithIdentifier("com.steinlogic.iapdemo.nonconsumablewithcontent")
-  }
 }
-
