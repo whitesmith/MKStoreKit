@@ -74,6 +74,11 @@ FOUNDATION_EXPORT const unsigned char MKStoreKitVersionString[];
 extern NSString *const kMKStoreKitProductsAvailableNotification;
 
 /*!
+ *  @abstract This notification is posted when if MKStoreKit finds invalid product ids after initialization sequence
+ */
+extern NSString *const kMKStoreKitProductsInvalidIdsNotification;
+
+/*!
  *  @abstract This notification is posted when MKStoreKit completes purchase of a product
  */
 extern NSString *const kMKStoreKitProductPurchasedNotification;
