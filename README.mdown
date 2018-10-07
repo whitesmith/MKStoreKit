@@ -20,12 +20,11 @@ The MKStoreKit is a singleton class that takes care of *everything*. Just drag t
 The Sample Code shows how to use MKStoreKit.
 
 ### Config File Format
-MKStoreKit uses a config file, MKStoreKitConfigs.plist for managing your product identifiers.
-The config file is a Plist dictionary containing three keys, "Consumables", "Others" and "SharedSecret"
 
-Consumables is the key where you provide a list of consumables in your app that should be managed as a virtual currency.
-Others is the key where you provide a list of in app purchasable products
-SharedSecret is the key where you provide the shared secret generated on your iTunesConnect account.
+`MKStoreKit` uses a config file, `MKStoreKitConfigs.plist` for managing your product identifiers.
+The config file is a Plist dictionary containing three keys, "Consumables", "Others" and "SharedSecret".
+
+_Consumables_ is the key where you provide a list of consumables in your app that should be managed as a virtual currency. _Others_ is the key where you provide a list of in app purchasable products. _SharedSecret_ is the key where you provide the shared secret generated on your App Store Connect account.
 
 ### Initialization
 
@@ -39,15 +38,15 @@ In Objective-C
 In Swift
 
 ``` swift
-    MKStoreKit.sharedKit().startProductRequest()
+MKStoreKit.sharedKit().startProductRequest()
 ```
 A sample initializiation code that you can add to your application:didFinishLaunchingWithOptions: is below
 In Objective-C
 
 ``` objective-c
-  [[MKStoreKit sharedKit] startProductRequest];
+[[MKStoreKit sharedKit] startProductRequest];
   
-  [[NSNotificationCenter defaultCenter] addObserverForName:kMKStoreKitProductsAvailableNotification
+[[NSNotificationCenter defaultCenter] addObserverForName:kMKStoreKitProductsAvailableNotification
                                                     object:nil
                                                      queue:[[NSOperationQueue alloc] init]
                                                 usingBlock:^(NSNotification *note) {
@@ -84,7 +83,7 @@ In Objective-C
 In Swift
 
 ``` swift
-    MKStoreKit.sharedKit().startProductRequest()
+MKStoreKit.sharedKit().startProductRequest()
     NSNotificationCenter.defaultCenter().addObserverForName(kMKStoreKitProductsAvailableNotification,
       object: nil, queue: NSOperationQueue.mainQueue()) { (note) -> Void in
         print(MKStoreKit.sharedKit().availableProducts)
@@ -94,11 +93,11 @@ In Swift
       object: nil, queue: NSOperationQueue.mainQueue()) { (note) -> Void in
         print ("Purchased product: \(note.object)")
     }
-
 ```
 
 ### Checking Product Status
 You can check if a product was previously purchased using -isProductPurchased as shown below.
+
 ``` objective-c
 if([MKStoreManager isProductPurchased:productIdentifier]) {
 //unlock it
@@ -106,6 +105,7 @@ if([MKStoreManager isProductPurchased:productIdentifier]) {
 ```
 
 You can check for a product's expiry date using -expiryDateForProduct as shown below.
+
 ``` objective-c
 if([MKStoreManager expiryDateForProduct:productIdentifier]) {
 //unlock it
@@ -125,7 +125,6 @@ To purchase a feature or to subscribe to a auto-renewing subscription, just call
 Observe kMKStoreKitProductPurchasedNotification to get notified when the purchase completes
 
 ``` objective-c
-
   [[NSNotificationCenter defaultCenter] addObserverForName:kMKStoreKitProductPurchasedNotification
                                                     object:nil
                                                      queue:[[NSOperationQueue alloc] init]
@@ -139,7 +138,6 @@ Observe kMKStoreKitProductPurchasedNotification to get notified when the purchas
 
 It can't get simpler than this!
 
-
 ## Missing Features
 
 * Keychain support for products
@@ -151,9 +149,7 @@ It can't get simpler than this!
 * Free subscriptions for news stand
 * Mac OS X support
 
-
 These three features might work, but they are not tested yet.
-
 
 ### Licensing
 
@@ -177,5 +173,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 ---
+
 ### Attribution free licensing
+
 In case you need attribution free licensing for MKNetworkKit, you can buy one from [my license store](http://blog.mugunthkumar.com/license-store/).
