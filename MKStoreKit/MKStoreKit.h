@@ -36,7 +36,15 @@
 //  A note on redistribution
 //	if you are re-publishing after editing, please retain the above copyright notices
 
-#import "TargetConditionals.h"
+#import <Foundation/Foundation.h>
+
+//! Project version number for MKStoreKit.
+FOUNDATION_EXPORT double MKStoreKitVersionNumber;
+
+//! Project version string for MKStoreKit.
+FOUNDATION_EXPORT const unsigned char MKStoreKitVersionString[];
+
+// In this header, you should import all the public headers of your framework using statements like #import <MKStoreKit/PublicHeader.h>
 
 #if TARGET_OS_IPHONE
 #import <Foundation/Foundation.h>
