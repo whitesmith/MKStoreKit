@@ -41,6 +41,7 @@
 @import StoreKit;
 NSString *const kMKStoreKitProductsAvailableNotification = @"com.mugunthkumar.mkstorekit.productsavailable";
 NSString *const kMKStoreKitProductPurchasedNotification = @"com.mugunthkumar.mkstorekit.productspurchased";
+NSString *const kMKStoreKitProductPurchaseStartedNotification = @"com.mugunthkumar.mkstorekit.productspurchasestarted";
 NSString *const kMKStoreKitProductPurchaseFailedNotification = @"com.mugunthkumar.mkstorekit.productspurchasefailed";
 NSString *const kMKStoreKitProductPurchaseDeferredNotification = @"com.mugunthkumar.mkstorekit.productspurchasedeferred";
 NSString *const kMKStoreKitRestoredPurchasesNotification = @"com.mugunthkumar.mkstorekit.restoredpurchases";
@@ -269,6 +270,8 @@ static NSDictionary *errorDictionary;
   [self.availableProducts enumerateObjectsUsingBlock:^(SKProduct *thisProduct, NSUInteger idx, BOOL *stop) {
     if ([thisProduct.productIdentifier isEqualToString:productId]) {
       *stop = YES;
+      [[NSNotificationCenter defaultCenter] postNotificationName:kMKStoreKitProductPurchaseStartedNotification
+                                                          object:thisProduct];
       SKPayment *payment = [SKPayment paymentWithProduct:thisProduct];
       [[SKPaymentQueue defaultQueue] addPayment:payment];
     }

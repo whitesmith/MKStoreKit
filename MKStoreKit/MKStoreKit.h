@@ -79,6 +79,11 @@ extern NSString *const kMKStoreKitProductsAvailableNotification;
 extern NSString *const kMKStoreKitProductPurchasedNotification;
 
 /*!
+ *  @abstract This notification is posted when MKStoreKit starts the purchase of a product
+ */
+extern NSString *const kMKStoreKitProductPurchaseStartedNotification;
+
+/*!
  *  @abstract This notification is posted when MKStoreKit fails to complete the purchase of a product
  */
 extern NSString *const kMKStoreKitProductPurchaseFailedNotification;
