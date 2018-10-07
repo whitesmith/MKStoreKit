@@ -40,11 +40,6 @@ class ViewController: UIViewController {
         )
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
-
     @IBAction func buyConsumable(sender: AnyObject) {
         MKStoreKit.shared().initiatePaymentRequestForProduct(withIdentifier: "com.steinlogic.iapdemo.consumable")
     }
