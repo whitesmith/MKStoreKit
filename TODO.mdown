@@ -7,4 +7,3 @@ Stuff to do in this project
 * Free subscriptions for news stand
 * Local receipt verification
 * Test subscription expiry
-* Rewrite in Swift 4
