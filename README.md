@@ -1,19 +1,43 @@
-# MKStoreKit
+# WSStoreKit (The MKStoreKit Whitesmith version)
 
-This is version 6.1 of MKStoreKit. iOS 8+ only. 
-MKStoreKit 6 is a **complete revamp** is not API compatible with previous versions of MKStoreKit. Refactoring should however be fairly simple.
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
 
-*The code base is still in early beta. Use with caution*
+This is version 7.0 of WSStoreKit. iOS 9.3+ only.
 
-The library contains just three files, MKStoreKit.h/m and MKStoreKitConfigs.plist
-The MKStoreKit is a singleton class that takes care of *everything*. Just drag these four files into the project. You then have to initialize it by calling [[MKStoreKit sharedKit] startProductRequest] in your application:didFinishLaunchingWithOptions. From then on, it does the magic. The MKStoreKit purchases, remembers and even handles remote validation of auto-renewable subscriptions.
+MKStoreKit is a **complete revamp** is not API compatible with previous versions of MKStoreKit. Refactoring should however be fairly simple.
+
+The `MKStoreKit` is a singleton class that takes care of *everything*. You then have to initialize it by calling `[[MKStoreKit sharedKit] startProductRequest]` in your `application:didFinishLaunchingWithOptions:`. From then on, it does the magic. The MKStoreKit purchases, remembers and even handles remote validation of auto-renewable subscriptions.
 
 ## Features
+
 * Super simple in app purchasing
 * Built-in support for remembering your purchases
 * Built-in receipt validation (remote)
 * Built-in virtual currency manager
 * Built-in Hosted Content Download Manager
+
+## Installation
+
+#### <img src="https://cloud.githubusercontent.com/assets/432536/5252404/443d64f4-7952-11e4-9d26-fc5cc664cb61.png" width="24" height="24"> [Carthage]
+
+[Carthage]: https://github.com/Carthage/Carthage
+
+To install it, simply add the following line to your **Cartfile**:
+
+```ruby
+github "whitesmith/WSStoreKit"
+```
+
+Then run `carthage update`.
+
+Follow the current instructions in [Carthage's README][carthage-installation]
+for up to date installation instructions.
+
+[carthage-installation]: https://github.com/Carthage/Carthage#adding-frameworks-to-an-application
+
+#### Manually
+
+The library contains just three files, `MKStoreKit.h/m` and `MKStoreKitConfigs.plist`. Just drag these four files into the project.
 
 ## Sample Code 
 
@@ -29,86 +53,93 @@ _Consumables_ is the key where you provide a list of consumables in your app tha
 ### Initialization
 
 Initialization is as simple as calling
-In Objective-C
+In **Objective-C**:
 
 ``` objective-c
 [[MKStoreKit sharedKit] startProductRequest]
 ```
 
-In Swift
+In **Swift**:
 
 ``` swift
 MKStoreKit.sharedKit().startProductRequest()
 ```
-A sample initializiation code that you can add to your application:didFinishLaunchingWithOptions: is below
-In Objective-C
+A sample initializiation code that you can add to your `application:didFinishLaunchingWithOptions:` is below
+
+In **Objective-C**:
 
 ``` objective-c
 [[MKStoreKit sharedKit] startProductRequest];
   
 [[NSNotificationCenter defaultCenter] addObserverForName:kMKStoreKitProductsAvailableNotification
-                                                    object:nil
-                                                     queue:[[NSOperationQueue alloc] init]
-                                                usingBlock:^(NSNotification *note) {
-    
-    NSLog(@"Products available: %@", [[MKStoreKit sharedKit] availableProducts]);
-  }];
-  
-  
-  [[NSNotificationCenter defaultCenter] addObserverForName:kMKStoreKitProductPurchasedNotification
-                                                    object:nil
-                                                     queue:[[NSOperationQueue alloc] init]
-                                                usingBlock:^(NSNotification *note) {
-                                                  
+                                                  object:nil
+                                                   queue:[[NSOperationQueue alloc] init]
+                                              usingBlock:^(NSNotification *note) {
+                                                  NSLog(@"Products available: %@", [[MKStoreKit sharedKit] availableProducts]);
+                                              }];
+
+
+[[NSNotificationCenter defaultCenter] addObserverForName:kMKStoreKitProductPurchasedNotification
+                                                  object:nil
+                                                   queue:[[NSOperationQueue alloc] init]
+                                              usingBlock:^(NSNotification *note) {
                                                   NSLog(@"Purchased/Subscribed to product with id: %@", [note object]);
-                                                }];
-  
-  [[NSNotificationCenter defaultCenter] addObserverForName:kMKStoreKitRestoredPurchasesNotification
-                                                    object:nil
-                                                     queue:[[NSOperationQueue alloc] init]
-                                                usingBlock:^(NSNotification *note) {
-                                                  
+                                              }];
+
+[[NSNotificationCenter defaultCenter] addObserverForName:kMKStoreKitRestoredPurchasesNotification
+                                                  object:nil
+                                                   queue:[[NSOperationQueue alloc] init]
+                                              usingBlock:^(NSNotification *note) {
                                                   NSLog(@"Restored Purchases");
-                                                }];
-  
-  [[NSNotificationCenter defaultCenter] addObserverForName:kMKStoreKitRestoringPurchasesFailedNotification
-                                                    object:nil
-                                                     queue:[[NSOperationQueue alloc] init]
-                                                usingBlock:^(NSNotification *note) {
-                                                  
+                                              }];
+
+[[NSNotificationCenter defaultCenter] addObserverForName:kMKStoreKitRestoringPurchasesFailedNotification
+                                                  object:nil
+                                                   queue:[[NSOperationQueue alloc] init]
+                                              usingBlock:^(NSNotification *note) {
                                                   NSLog(@"Failed restoring purchases with error: %@", [note object]);
-                                                }];
+                                                  }];
 ```
 
-In Swift
+In **Swift**:
 
 ``` swift
-MKStoreKit.sharedKit().startProductRequest()
-    NSNotificationCenter.defaultCenter().addObserverForName(kMKStoreKitProductsAvailableNotification,
-      object: nil, queue: NSOperationQueue.mainQueue()) { (note) -> Void in
-        print(MKStoreKit.sharedKit().availableProducts)
-    }
+MKStoreKit.shared().startProductRequest()
 
-    NSNotificationCenter.defaultCenter().addObserverForName(kMKStoreKitProductPurchasedNotification,
-      object: nil, queue: NSOperationQueue.mainQueue()) { (note) -> Void in
-        print ("Purchased product: \(note.object)")
+NotificationCenter.default.addObserver(
+    forName: NSNotification.Name.mkStoreKitProductsAvailable,
+    object: nil,
+    queue: OperationQueue.main,
+    using: { note in
+        print(MKStoreKit.shared().availableProducts)
     }
+)
+
+NotificationCenter.default.addObserver(
+    forName: NSNotification.Name.mkStoreKitProductPurchased,
+    object: nil,
+    queue: OperationQueue.main,
+    using: { note in
+        print ("Purchased product: \(note.object ?? "none")")
+    }
+)
 ```
 
 ### Checking Product Status
+
 You can check if a product was previously purchased using -isProductPurchased as shown below.
 
 ``` objective-c
-if([MKStoreManager isProductPurchased:productIdentifier]) {
-//unlock it
+if ([MKStoreManager isProductPurchased:productIdentifier]) {
+    //unlock it
 }
 ```
 
 You can check for a product's expiry date using -expiryDateForProduct as shown below.
 
 ``` objective-c
-if([MKStoreManager expiryDateForProduct:productIdentifier]) {
-//unlock it
+if ([MKStoreManager expiryDateForProduct:productIdentifier]) {
+    //unlock it
 }
 ```
 
@@ -122,18 +153,16 @@ To purchase a feature or to subscribe to a auto-renewing subscription, just call
 [[MKStoreKit sharedKit] initiatePaymentRequestForProductWithIdentifier:productIdentifier];
 ```
 
-Observe kMKStoreKitProductPurchasedNotification to get notified when the purchase completes
+Observe `kMKStoreKitProductPurchasedNotification` to get notified when the purchase completes
 
 ``` objective-c
-  [[NSNotificationCenter defaultCenter] addObserverForName:kMKStoreKitProductPurchasedNotification
-                                                    object:nil
-                                                     queue:[[NSOperationQueue alloc] init]
-                                                usingBlock:^(NSNotification *note) {
-                                                  
+[[NSNotificationCenter defaultCenter] addObserverForName:kMKStoreKitProductPurchasedNotification
+                                                  object:nil
+                                                   queue:[[NSOperationQueue alloc] init]
+                                              usingBlock:^(NSNotification *note) {
                                                   NSLog(@"Purchased/Subscribed to product with id: %@", [note object]);
-                                                  
                                                   NSLog(@"%@", [[MKStoreKit sharedKit] valueForKey:@"purchaseRecord"]);
-                                                }];
+                                                  }];
 ```
 
 It can't get simpler than this!
@@ -150,6 +179,10 @@ It can't get simpler than this!
 * Mac OS X support
 
 These three features might work, but they are not tested yet.
+
+## Requirements
+
+ - Xcode 10 (Swift 4.2)
 
 ### Licensing
 
