@@ -161,7 +161,7 @@ extern NSString *const kMKStoreKitDownloadCompletedNotification;
  *  @discussion
  *	Use this to access the only object of MKStoreKit
  */
-+ (MKStoreKit *)sharedKit;
+@property (class, readonly, strong, nonnull) MKStoreKit *shared;
 
 /*!
  *  @abstract Initializes MKStoreKit singleton by making the product request using StoreKit's SKProductRequest

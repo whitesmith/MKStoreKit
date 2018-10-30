@@ -69,7 +69,7 @@ static NSDictionary *errorDictionary;
 #pragma mark -
 #pragma mark Singleton Methods
 
-+ (MKStoreKit *)sharedKit {
++ (MKStoreKit *)shared {
     static MKStoreKit *_sharedKit;
     if (!_sharedKit) {
         static dispatch_once_t oncePredicate;
@@ -95,7 +95,7 @@ static NSDictionary *errorDictionary;
 }
 
 + (id)allocWithZone:(NSZone *)zone {
-    return [self sharedKit];
+    return [self shared];
 }
 
 - (id)copyWithZone:(NSZone *)zone {

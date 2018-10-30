@@ -41,19 +41,19 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buyConsumable(sender: AnyObject) {
-        MKStoreKit.shared().initiatePaymentRequestForProduct(withIdentifier: "com.steinlogic.iapdemo.consumable")
+        MKStoreKit.shared.initiatePaymentRequestForProduct(withIdentifier: "com.steinlogic.iapdemo.consumable")
     }
 
     @IBAction func buyNonConsumable(sender: AnyObject) {
-        MKStoreKit.shared().initiatePaymentRequestForProduct(withIdentifier: "com.steinlogic.iapdemo.nonconsumablenocontent")
+        MKStoreKit.shared.initiatePaymentRequestForProduct(withIdentifier: "com.steinlogic.iapdemo.nonconsumablenocontent")
     }
 
     @IBAction func buySubscriptionWithContent(sender: AnyObject) {
-        MKStoreKit.shared().initiatePaymentRequestForProduct(withIdentifier: "com.steinlogic.iapdemo.quarterly")
+        MKStoreKit.shared.initiatePaymentRequestForProduct(withIdentifier: "com.steinlogic.iapdemo.quarterly")
     }
 
     @IBAction func buyNonConsumableWithoutContent(sender: AnyObject) {
-        MKStoreKit.shared().initiatePaymentRequestForProduct(withIdentifier: "com.steinlogic.iapdemo.nonconsumablewithcontent")
+        MKStoreKit.shared.initiatePaymentRequestForProduct(withIdentifier: "com.steinlogic.iapdemo.nonconsumablewithcontent")
     }
 
 }
