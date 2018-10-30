@@ -6,7 +6,7 @@ This is version 7.0 of WSStoreKit. iOS 9.3+ only.
 
 MKStoreKit is a **complete revamp** is not API compatible with previous versions of MKStoreKit. Refactoring should however be fairly simple.
 
-The `MKStoreKit` is a singleton class that takes care of *everything*. You then have to initialize it by calling `[[MKStoreKit sharedKit] startProductRequest]` in your `application:didFinishLaunchingWithOptions:`. From then on, it does the magic. The MKStoreKit purchases, remembers and even handles remote validation of auto-renewable subscriptions.
+The `MKStoreKit` is a singleton class that takes care of *everything*. You then have to initialize it by calling `[MKStoreKit.shared startProductRequest]` in your `application:didFinishLaunchingWithOptions:`. From then on, it does the magic. The MKStoreKit purchases, remembers and even handles remote validation of auto-renewable subscriptions.
 
 ## Features
 
@@ -56,20 +56,20 @@ Initialization is as simple as calling
 In **Objective-C**:
 
 ``` objective-c
-[[MKStoreKit sharedKit] startProductRequest]
+[MKStoreKit.shared startProductRequest]
 ```
 
 In **Swift**:
 
 ``` swift
-MKStoreKit.sharedKit().startProductRequest()
+MKStoreKit.shared.startProductRequest()
 ```
 A sample initializiation code that you can add to your `application:didFinishLaunchingWithOptions:` is below
 
 In **Objective-C**:
 
 ``` objective-c
-[[MKStoreKit sharedKit] startProductRequest];
+[MKStoreKit.shared startProductRequest];
   
 [[NSNotificationCenter defaultCenter] addObserverForName:kMKStoreKitProductsAvailableNotification
                                                   object:nil
@@ -104,7 +104,7 @@ In **Objective-C**:
 In **Swift**:
 
 ``` swift
-MKStoreKit.shared().startProductRequest()
+MKStoreKit.shared.startProductRequest()
 
 NotificationCenter.default.addObserver(
     forName: NSNotification.Name.mkStoreKitProductsAvailable,
@@ -150,7 +150,7 @@ Warning: This method will return ```[NSNull null]``` for products that are not a
 To purchase a feature or to subscribe to a auto-renewing subscription, just call
 
 ``` objective-c
-[[MKStoreKit sharedKit] initiatePaymentRequestForProductWithIdentifier:productIdentifier];
+[MKStoreKit.shared initiatePaymentRequestForProductWithIdentifier:productIdentifier];
 ```
 
 Observe `kMKStoreKitProductPurchasedNotification` to get notified when the purchase completes
