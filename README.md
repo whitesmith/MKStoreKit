@@ -180,10 +180,6 @@ It can't get simpler than this!
 
 These three features might work, but they are not tested yet.
 
-## Requirements
-
- - Xcode 10 (Swift 4.2)
-
 ### Licensing
 
 MKStoreKit is licensed under MIT License
