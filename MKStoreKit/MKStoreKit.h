@@ -68,6 +68,9 @@ FOUNDATION_EXPORT const unsigned char MKStoreKitVersionString[];
 #error MKStoreKit is ARC only. Either turn on ARC for the project or use -fobjc-arc flag
 #endif
 #endif
+
+NS_ASSUME_NONNULL_BEGIN
+
 /*!
  *  @abstract This notification is posted when MKStoreKit completes initialization sequence
  */
@@ -195,7 +198,7 @@ extern NSString *const kMKStoreKitDownloadCompletedNotification;
  *  -availableProducts
  *  -startProductRequest
  */
-- (void)startProductRequestWithProductIdentifiers:(NSArray*) items;
+- (void)startProductRequestWithProductIdentifiers:(NSArray *)items;
 
 /*!
  *  @abstract Restores In App Purchases made on other devices
@@ -317,5 +320,6 @@ extern NSString *const kMKStoreKitDownloadCompletedNotification;
  */
 - (void)setDefaultCredits:(NSNumber *)creditCount forConsumableIdentifier:(NSString *)consumableId;
 
-
 @end
+
+NS_ASSUME_NONNULL_END
