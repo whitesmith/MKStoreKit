@@ -40,6 +40,7 @@
 
 @import StoreKit;
 NSString *const kMKStoreKitProductsAvailableNotification = @"com.mugunthkumar.mkstorekit.productsavailable";
+NSString *const kMKStoreKitProductsRequestDidFailWithErrorNotification = @"com.mugunthkumar.mkstorekit.productsfailed";
 NSString *const kMKStoreKitProductsInvalidIdsNotification = @"com.mugunthkumar.mkstorekit.productsinvalidids";
 NSString *const kMKStoreKitProductPurchasedNotification = @"com.mugunthkumar.mkstorekit.productspurchased";
 NSString *const kMKStoreKitProductPurchaseStartedNotification = @"com.mugunthkumar.mkstorekit.productspurchasestarted";
@@ -226,6 +227,8 @@ static NSDictionary *errorDictionary;
 
 - (void)request:(SKRequest *)request didFailWithError:(NSError *)error {
     NSLog(@"MKStoreKit: product request failed with error: %@", error);
+    [[NSNotificationCenter defaultCenter] postNotificationName:kMKStoreKitProductsRequestDidFailWithErrorNotification
+                                                        object:error];
 }
 
 #pragma mark -
@@ -248,7 +251,6 @@ static NSDictionary *errorDictionary;
 
 - (void)initiatePaymentRequestForProductWithIdentifier:(NSString *)productId {
     if (!self.availableProducts) {
-        // TODO: FIX ME
         // Initializer might be running or internet might not be available
         NSLog(@"No products are available. Did you initialize MKStoreKit by calling [[MKStoreKit sharedKit] startProductRequest]?");
     }

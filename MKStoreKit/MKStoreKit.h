@@ -77,6 +77,11 @@ NS_ASSUME_NONNULL_BEGIN
 extern NSString *const kMKStoreKitProductsAvailableNotification;
 
 /*!
+ *  @abstract This notification is posted when MKStoreKit fails requesting products
+ */
+extern NSString *const kMKStoreKitProductsRequestDidFailWithErrorNotification;
+
+/*!
  *  @abstract This notification is posted when if MKStoreKit finds invalid product ids after initialization sequence
  */
 extern NSString *const kMKStoreKitProductsInvalidIdsNotification;
