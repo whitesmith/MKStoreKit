@@ -72,37 +72,44 @@ FOUNDATION_EXPORT const unsigned char MKStoreKitVersionString[];
 NS_ASSUME_NONNULL_BEGIN
 
 /*!
- *  @abstract This notification is posted when MKStoreKit completes initialization sequence
+ *  @abstract This notification is posted when MKStoreKit completes initialization sequence.
  */
 extern NSString *const kMKStoreKitProductsAvailableNotification;
 
 /*!
- *  @abstract This notification is posted when MKStoreKit fails requesting products
+ *  @abstract This notification is posted when MKStoreKit fails requesting products.
+ *  The 'object' property in the notification contains the NSError.
  */
 extern NSString *const kMKStoreKitProductsRequestDidFailWithErrorNotification;
 
 /*!
- *  @abstract This notification is posted when if MKStoreKit finds invalid product ids after initialization sequence
+ *  @abstract This notification is posted when if MKStoreKit finds invalid product ids after initialization sequence.
  */
 extern NSString *const kMKStoreKitProductsInvalidIdsNotification;
 
 /*!
- *  @abstract This notification is posted when MKStoreKit completes purchase of a product
+ *  @abstract This notification is posted when MKStoreKit completes purchase of a product.
  */
 extern NSString *const kMKStoreKitProductPurchasedNotification;
 
 /*!
- *  @abstract This notification is posted when MKStoreKit starts the purchase of a product
+ *  @abstract This notification is posted when MKStoreKit starts the purchase of a product.
  */
 extern NSString *const kMKStoreKitProductPurchaseStartedNotification;
 
 /*!
- *  @abstract This notification is posted when MKStoreKit fails to complete the purchase of a product
+ *  @abstract This notification is posted when a user initiated an in-app purchase from the App Store.
+ *  The 'object' property in the notification contains the selected SKProduct.
+ */
+extern NSString *const kMKStoreKitProductPurchaseStartedFromAppStoreNotification;
+
+/*!
+ *  @abstract This notification is posted when MKStoreKit fails to complete the purchase of a product.
  */
 extern NSString *const kMKStoreKitProductPurchaseFailedNotification;
 
 /*!
- *  @abstract This notification is posted when MKStoreKit has a purchase deferred for approval
+ *  @abstract This notification is posted when MKStoreKit has a purchase deferred for approval.
  *  @discussion
  *  This occurs when a device has parental controls for in-App Purchases enabled.
  *   iOS will present a prompt for parental approval, either on the current device or
@@ -113,32 +120,32 @@ extern NSString *const kMKStoreKitProductPurchaseFailedNotification;
 extern NSString *const kMKStoreKitProductPurchaseDeferredNotification NS_AVAILABLE(10_10, 8_0);
 
 /*!
- *  @abstract This notification is posted when MKStoreKit completes restoring purchases
+ *  @abstract This notification is posted when MKStoreKit completes restoring purchases.
  */
 extern NSString *const kMKStoreKitRestoredPurchasesNotification;
 
 /*!
- *  @abstract This notification is posted when MKStoreKit fails to restore purchases
+ *  @abstract This notification is posted when MKStoreKit fails to restore purchases.
  */
 extern NSString *const kMKStoreKitRestoringPurchasesFailedNotification;
 
 /*!
- *  @abstract This notification is posted when MKStoreKit fails to validate receipts
+ *  @abstract This notification is posted when MKStoreKit fails to validate receipts.
  */
 extern NSString *const kMKStoreKitReceiptValidationFailedNotification;
 
 /*!
- *  @abstract This notification is posted when MKStoreKit detects expiration of a auto-renewing subscription
+ *  @abstract This notification is posted when MKStoreKit detects expiration of a auto-renewing subscription.
  */
 extern NSString *const kMKStoreKitSubscriptionExpiredNotification;
 
 /*!
- *  @abstract This notification is posted when MKStoreKit downloads a hosted content
+ *  @abstract This notification is posted when MKStoreKit downloads a hosted content.
  */
 extern NSString *const kMKStoreKitDownloadProgressNotification;
 
 /*!
- *  @abstract This notification is posted when MKStoreKit completes downloading a hosted content
+ *  @abstract This notification is posted when MKStoreKit completes downloading a hosted content.
  */
 extern NSString *const kMKStoreKitDownloadCompletedNotification;
 

@@ -44,6 +44,7 @@ NSString *const kMKStoreKitProductsRequestDidFailWithErrorNotification = @"com.m
 NSString *const kMKStoreKitProductsInvalidIdsNotification = @"com.mugunthkumar.mkstorekit.productsinvalidids";
 NSString *const kMKStoreKitProductPurchasedNotification = @"com.mugunthkumar.mkstorekit.productspurchased";
 NSString *const kMKStoreKitProductPurchaseStartedNotification = @"com.mugunthkumar.mkstorekit.productspurchasestarted";
+NSString *const kMKStoreKitProductPurchaseStartedFromAppStoreNotification = @"com.mugunthkumar.mkstorekit.productspurchasestartedfromappstore";
 NSString *const kMKStoreKitProductPurchaseFailedNotification = @"com.mugunthkumar.mkstorekit.productspurchasefailed";
 NSString *const kMKStoreKitProductPurchaseDeferredNotification = @"com.mugunthkumar.mkstorekit.productspurchasedeferred";
 NSString *const kMKStoreKitRestoredPurchasesNotification = @"com.mugunthkumar.mkstorekit.restoredpurchases";
@@ -244,6 +245,11 @@ static NSDictionary *errorDictionary;
 
 - (void)paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue *)queue {
     [[NSNotificationCenter defaultCenter] postNotificationName:kMKStoreKitRestoredPurchasesNotification object:nil];
+}
+
+- (BOOL)paymentQueue:(SKPaymentQueue *)queue shouldAddStorePayment:(SKPayment *)payment forProduct:(SKProduct *)product {
+    [[NSNotificationCenter defaultCenter] postNotificationName:kMKStoreKitProductPurchaseStartedFromAppStoreNotification object:product];
+    return false; //Defer the transaction. Continue the transaction later by manually starting the purchase using the product that is sent.
 }
 
 #pragma mark -
