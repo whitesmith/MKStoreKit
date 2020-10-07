@@ -374,8 +374,14 @@ static NSDictionary *errorDictionary;
             }
 
             if (status != 0) {
-                NSError *error = [NSError errorWithDomain:@"com.mugunthkumar.mkstorekit" code:status
-                                                 userInfo:@{NSLocalizedDescriptionKey : errorDictionary[@(status)]}];
+                NSString *errorMessage;
+                if ([errorDictionary.allKeys containsObject:@(status)]) {
+                    errorMessage = errorDictionary[@(status)];
+                }
+                else {
+                    errorMessage = [NSString stringWithFormat:@"Unknown error with status code %@", @(status)];
+                }
+                NSError *error = [NSError errorWithDomain:@"com.mugunthkumar.mkstorekit" code:status userInfo:@{NSLocalizedDescriptionKey : errorMessage}];
                 completionHandler(nil, error);
             } else {
                 NSMutableArray *receipts = [jsonResponse[@"latest_receipt_info"] mutableCopy];
