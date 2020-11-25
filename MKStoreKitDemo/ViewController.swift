@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WSStoreKit
 
 class ViewController: UIViewController {
 

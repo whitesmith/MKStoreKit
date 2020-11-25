@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WSStoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

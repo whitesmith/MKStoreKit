@@ -1,0 +1,6 @@
+framework module WSStoreKit {
+    umbrella header "WSStoreKit.h"
+
+    export *
+    module * { export * }
+}

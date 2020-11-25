@@ -14,10 +14,10 @@
 		AB1D94931BE9AAFA00AD95A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB1D94911BE9AAFA00AD95A4 /* LaunchScreen.storyboard */; };
 		AB1D94BD1BE9AB1F00AD95A4 /* MKStoreKitConfigs.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB1D94BA1BE9AB1F00AD95A4 /* MKStoreKitConfigs.plist */; };
 		AB1D94CC1BE9B05E00AD95A4 /* Shanghai.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB1D94CB1BE9B05E00AD95A4 /* Shanghai.jpg */; };
-		D75D737A20C567D700B7F0AB /* MKStoreKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D75D737820C567D700B7F0AB /* MKStoreKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D75D737D20C567D700B7F0AB /* MKStoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75D737620C567D700B7F0AB /* MKStoreKit.framework */; };
-		D75D737E20C567D700B7F0AB /* MKStoreKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D75D737620C567D700B7F0AB /* MKStoreKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D75D738320C568B500B7F0AB /* MKStoreKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8133E71BE9C58100726CE6 /* MKStoreKit.m */; };
+		D75D737D20C567D700B7F0AB /* WSStoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75D737620C567D700B7F0AB /* WSStoreKit.framework */; };
+		D7BF4908256EB1C90047DD17 /* MKStoreKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BF4906256EB1C90047DD17 /* MKStoreKit.m */; };
+		D7BF4909256EB1C90047DD17 /* MKStoreKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D7BF4907256EB1C90047DD17 /* MKStoreKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D7BF4956256EB8420047DD17 /* WSStoreKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D7BF4955256EB8400047DD17 /* WSStoreKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,38 +30,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		D75D738220C567D700B7F0AB /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				D75D737E20C567D700B7F0AB /* MKStoreKit.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		AB1D94851BE9AAFA00AD95A4 /* MKStoreKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MKStoreKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB1D94851BE9AAFA00AD95A4 /* WSStoreKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WSStoreKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB1D94881BE9AAFA00AD95A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB1D948A1BE9AAFA00AD95A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AB1D948D1BE9AAFA00AD95A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB1D948F1BE9AAFA00AD95A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB1D94921BE9AAFA00AD95A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB1D94941BE9AAFA00AD95A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB1D94B71BE9AB1E00AD95A4 /* MKStoreKitDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MKStoreKitDemo-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
-		AB1D94BA1BE9AB1F00AD95A4 /* MKStoreKitConfigs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = MKStoreKitConfigs.plist; path = ../MKStoreKitConfigs.plist; sourceTree = "<group>"; };
+		AB1D94BA1BE9AB1F00AD95A4 /* MKStoreKitConfigs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MKStoreKitConfigs.plist; sourceTree = "<group>"; };
 		AB1D94C51BE9B03A00AD95A4 /* HostedContent */ = {isa = PBXFileReference; explicitFileType = folder; includeInIndex = 0; path = HostedContent; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB1D94C71BE9B03A00AD95A4 /* ContentInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ContentInfo.plist; sourceTree = "<group>"; };
 		AB1D94CB1BE9B05E00AD95A4 /* Shanghai.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Shanghai.jpg; sourceTree = "<group>"; };
-		AB8133E61BE9C58100726CE6 /* MKStoreKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKStoreKit.h; sourceTree = "<group>"; };
-		AB8133E71BE9C58100726CE6 /* MKStoreKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKStoreKit.m; sourceTree = "<group>"; };
-		D75D737620C567D700B7F0AB /* MKStoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MKStoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D75D737820C567D700B7F0AB /* MKStoreKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKStoreKit.h; sourceTree = "<group>"; };
+		D75D737620C567D700B7F0AB /* WSStoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WSStoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D75D737920C567D700B7F0AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7BF4906256EB1C90047DD17 /* MKStoreKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKStoreKit.m; sourceTree = "<group>"; };
+		D7BF4907256EB1C90047DD17 /* MKStoreKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKStoreKit.h; sourceTree = "<group>"; };
+		D7BF4948256EB5410047DD17 /* WSStoreKit.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = WSStoreKit.modulemap; sourceTree = "<group>"; };
+		D7BF4955256EB8400047DD17 /* WSStoreKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSStoreKit.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D75D737D20C567D700B7F0AB /* MKStoreKit.framework in Frameworks */,
+				D75D737D20C567D700B7F0AB /* WSStoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,10 +72,9 @@
 		AB1D947C1BE9AAFA00AD95A4 = {
 			isa = PBXGroup;
 			children = (
-				AB8133E51BE9C58100726CE6 /* MKStoreKit */,
+				D7BF4905256EB1980047DD17 /* Source */,
 				AB1D94871BE9AAFA00AD95A4 /* MKStoreKitDemo */,
 				AB1D94C61BE9B03A00AD95A4 /* HostedContent */,
-				D75D737720C567D700B7F0AB /* MKStoreKit */,
 				AB1D94861BE9AAFA00AD95A4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,9 +82,9 @@
 		AB1D94861BE9AAFA00AD95A4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AB1D94851BE9AAFA00AD95A4 /* MKStoreKitDemo.app */,
+				AB1D94851BE9AAFA00AD95A4 /* WSStoreKitDemo.app */,
 				AB1D94C51BE9B03A00AD95A4 /* HostedContent */,
-				D75D737620C567D700B7F0AB /* MKStoreKit.framework */,
+				D75D737620C567D700B7F0AB /* WSStoreKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				AB1D94BA1BE9AB1F00AD95A4 /* MKStoreKitConfigs.plist */,
-				AB1D94B71BE9AB1E00AD95A4 /* MKStoreKitDemo-Bridging-Header.h */,
 				AB1D94881BE9AAFA00AD95A4 /* AppDelegate.swift */,
 				AB1D948A1BE9AAFA00AD95A4 /* ViewController.swift */,
 				AB1D948C1BE9AAFA00AD95A4 /* Main.storyboard */,
@@ -128,22 +112,16 @@
 			path = HostedContent;
 			sourceTree = "<group>";
 		};
-		AB8133E51BE9C58100726CE6 /* MKStoreKit */ = {
+		D7BF4905256EB1980047DD17 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				AB8133E61BE9C58100726CE6 /* MKStoreKit.h */,
-				AB8133E71BE9C58100726CE6 /* MKStoreKit.m */,
-			);
-			path = MKStoreKit;
-			sourceTree = "<group>";
-		};
-		D75D737720C567D700B7F0AB /* MKStoreKit */ = {
-			isa = PBXGroup;
-			children = (
-				D75D737820C567D700B7F0AB /* MKStoreKit.h */,
+				D7BF4955256EB8400047DD17 /* WSStoreKit.h */,
+				D7BF4948256EB5410047DD17 /* WSStoreKit.modulemap */,
+				D7BF4907256EB1C90047DD17 /* MKStoreKit.h */,
+				D7BF4906256EB1C90047DD17 /* MKStoreKit.m */,
 				D75D737920C567D700B7F0AB /* Info.plist */,
 			);
-			path = MKStoreKit;
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,30 +131,30 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D75D737A20C567D700B7F0AB /* MKStoreKit.h in Headers */,
+				D7BF4909256EB1C90047DD17 /* MKStoreKit.h in Headers */,
+				D7BF4956256EB8420047DD17 /* WSStoreKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		AB1D94841BE9AAFA00AD95A4 /* MKStoreKitDemo */ = {
+		AB1D94841BE9AAFA00AD95A4 /* WSStoreKitDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AB1D94AD1BE9AAFA00AD95A4 /* Build configuration list for PBXNativeTarget "MKStoreKitDemo" */;
+			buildConfigurationList = AB1D94AD1BE9AAFA00AD95A4 /* Build configuration list for PBXNativeTarget "WSStoreKitDemo" */;
 			buildPhases = (
 				AB1D94811BE9AAFA00AD95A4 /* Sources */,
 				AB1D94821BE9AAFA00AD95A4 /* Frameworks */,
 				AB1D94831BE9AAFA00AD95A4 /* Resources */,
-				D75D738220C567D700B7F0AB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				D75D737C20C567D700B7F0AB /* PBXTargetDependency */,
 			);
-			name = MKStoreKitDemo;
+			name = WSStoreKitDemo;
 			productName = MKStoreKitDemo;
-			productReference = AB1D94851BE9AAFA00AD95A4 /* MKStoreKitDemo.app */;
+			productReference = AB1D94851BE9AAFA00AD95A4 /* WSStoreKitDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 		AB1D94C41BE9B03A00AD95A4 /* HostedContent */ = {
@@ -194,9 +172,9 @@
 			productReference = AB1D94C51BE9B03A00AD95A4 /* HostedContent */;
 			productType = "com.apple.product-type.in-app-purchase-content";
 		};
-		D75D737520C567D700B7F0AB /* MKStoreKit */ = {
+		D75D737520C567D700B7F0AB /* WSStoreKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D75D737F20C567D700B7F0AB /* Build configuration list for PBXNativeTarget "MKStoreKit" */;
+			buildConfigurationList = D75D737F20C567D700B7F0AB /* Build configuration list for PBXNativeTarget "WSStoreKit" */;
 			buildPhases = (
 				D75D737120C567D700B7F0AB /* Sources */,
 				D75D737220C567D700B7F0AB /* Frameworks */,
@@ -207,9 +185,9 @@
 			);
 			dependencies = (
 			);
-			name = MKStoreKit;
+			name = WSStoreKit;
 			productName = MKStoreKit;
-			productReference = D75D737620C567D700B7F0AB /* MKStoreKit.framework */;
+			productReference = D75D737620C567D700B7F0AB /* WSStoreKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -219,7 +197,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "Steinlogic Consulting and Training Pte Ltd";
 				TargetAttributes = {
 					AB1D94841BE9AAFA00AD95A4 = {
@@ -235,7 +213,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AB1D94801BE9AAFA00AD95A4 /* Build configuration list for PBXProject "MKStoreKit" */;
+			buildConfigurationList = AB1D94801BE9AAFA00AD95A4 /* Build configuration list for PBXProject "WSStoreKit" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -248,9 +226,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AB1D94841BE9AAFA00AD95A4 /* MKStoreKitDemo */,
+				D75D737520C567D700B7F0AB /* WSStoreKit */,
+				AB1D94841BE9AAFA00AD95A4 /* WSStoreKitDemo */,
 				AB1D94C41BE9B03A00AD95A4 /* HostedContent */,
-				D75D737520C567D700B7F0AB /* MKStoreKit */,
 			);
 		};
 /* End PBXProject section */
@@ -298,7 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D75D738320C568B500B7F0AB /* MKStoreKit.m in Sources */,
+				D7BF4908256EB1C90047DD17 /* MKStoreKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,7 +285,7 @@
 /* Begin PBXTargetDependency section */
 		D75D737C20C567D700B7F0AB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D75D737520C567D700B7F0AB /* MKStoreKit */;
+			target = D75D737520C567D700B7F0AB /* WSStoreKit */;
 			targetProxy = D75D737B20C567D700B7F0AB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -450,7 +428,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.steinlogic.iapdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "MKStoreKitDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -466,7 +443,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.steinlogic.iapdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "MKStoreKitDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -510,13 +486,15 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = MKStoreKit/Info.plist;
+				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MARKETING_VERSION = 7.0.5;
-				PRODUCT_BUNDLE_IDENTIFIER = co.whitesmith.MKStoreKit;
+				MODULEMAP_FILE = Source/WSStoreKit.modulemap;
+				PRODUCT_BUNDLE_IDENTIFIER = co.whitesmith.WSStoreKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -542,13 +520,15 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = MKStoreKit/Info.plist;
+				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MARKETING_VERSION = 7.0.5;
-				PRODUCT_BUNDLE_IDENTIFIER = co.whitesmith.MKStoreKit;
+				MODULEMAP_FILE = Source/WSStoreKit.modulemap;
+				PRODUCT_BUNDLE_IDENTIFIER = co.whitesmith.WSStoreKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -558,7 +538,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AB1D94801BE9AAFA00AD95A4 /* Build configuration list for PBXProject "MKStoreKit" */ = {
+		AB1D94801BE9AAFA00AD95A4 /* Build configuration list for PBXProject "WSStoreKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AB1D94AB1BE9AAFA00AD95A4 /* Debug */,
@@ -567,7 +547,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AB1D94AD1BE9AAFA00AD95A4 /* Build configuration list for PBXNativeTarget "MKStoreKitDemo" */ = {
+		AB1D94AD1BE9AAFA00AD95A4 /* Build configuration list for PBXNativeTarget "WSStoreKitDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AB1D94AE1BE9AAFA00AD95A4 /* Debug */,
@@ -585,7 +565,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D75D737F20C567D700B7F0AB /* Build configuration list for PBXNativeTarget "MKStoreKit" */ = {
+		D75D737F20C567D700B7F0AB /* Build configuration list for PBXNativeTarget "WSStoreKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D75D738020C567D700B7F0AB /* Debug */,

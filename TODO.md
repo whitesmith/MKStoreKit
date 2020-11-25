@@ -1,9 +1,0 @@
-# TODO
-Stuff to do in this project
-
-* Mac OS X support
-* Sample Mac OS X code
-* Non-renewing subscriptions
-* Free subscriptions for news stand
-* Local receipt verification
-* Test subscription expiry
