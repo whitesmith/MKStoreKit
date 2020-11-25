@@ -1,12 +1,13 @@
-# WSStoreKit (The MKStoreKit Whitesmith version)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-Compatible-brightgreen.svg)](https://github.com/Carthage/Carthage)
+[![SwiftPM Compatible](https://img.shields.io/badge/SwiftPM-Compatible-brightgreen.svg)](https://swift.org/package-manager)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/WSStoreKit.svg?style=flat)](https://cocoapods.org/pods/WSStoreKit)
+[![Swift 5.3](https://img.shields.io/badge/Swift-5.3-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![Platforms iOS](https://img.shields.io/badge/Platforms-iOS-lightgray.svg?style=flat)](https://developer.apple.com/swift/)
+[![License MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/whitesmith/WSStoreKit/blob/master/LICENSE)
 
-[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
+# WSStoreKit
 
-This is version 7.0 of WSStoreKit. iOS 9.3+ only.
-
-MKStoreKit is a **complete revamp** is not API compatible with previous versions of MKStoreKit. Refactoring should however be fairly simple.
-
-The `MKStoreKit` is a singleton class that takes care of *everything*. You then have to initialize it by calling `[MKStoreKit.shared startProductRequest]` in your `application:didFinishLaunchingWithOptions:`. From then on, it does the magic. The MKStoreKit purchases, remembers and even handles remote validation of auto-renewable subscriptions.
+This is version 8.0 of WSStoreKit. iOS 11+ only.
 
 ## Features
 
@@ -18,26 +19,25 @@ The `MKStoreKit` is a singleton class that takes care of *everything*. You then 
 
 ## Installation
 
-#### <img src="https://cloud.githubusercontent.com/assets/432536/5252404/443d64f4-7952-11e4-9d26-fc5cc664cb61.png" width="24" height="24"> [Carthage]
+#### CocoaPods
 
-[Carthage]: https://github.com/Carthage/Carthage
+```ruby
+pod 'WSStoreKit', '~> 8.0'
+```
 
-To install it, simply add the following line to your **Cartfile**:
+#### Carthage
 
 ```ruby
 github "whitesmith/WSStoreKit"
 ```
 
-Then run `carthage update`.
+## Acknowledgements
 
-Follow the current instructions in [Carthage's README][carthage-installation]
-for up to date installation instructions.
+This is a modified copy of [MKStoreKit](https://github.com/MugunthKumar/MKStoreKit).
 
-[carthage-installation]: https://github.com/Carthage/Carthage#adding-frameworks-to-an-application
+MKStoreKit is a **complete revamp** is not API compatible with previous versions of MKStoreKit. Refactoring should however be fairly simple.
 
-#### Manually
-
-The library contains just three files, `MKStoreKit.h/m` and `MKStoreKitConfigs.plist`. Just drag these four files into the project.
+The `MKStoreKit` is a singleton class that takes care of *everything*. You then have to initialize it by calling `[MKStoreKit.shared startProductRequest]` in your `application:didFinishLaunchingWithOptions:`. From then on, it does the magic. The MKStoreKit purchases, remembers and even handles remote validation of auto-renewable subscriptions.
 
 ## Sample Code 
 
