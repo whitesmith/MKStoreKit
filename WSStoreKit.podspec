@@ -10,6 +10,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '11.0'
   s.requires_arc = true
   s.swift_version = '5.3'
-  s.source_files = 'Source/**/*.{h,swift}'
+  s.source_files = 'Source/**/*.{h,m,swift}'
+  s.module_map = 'Source/WSStoreKit.modulemap'
   s.frameworks = 'StoreKit'
 end
