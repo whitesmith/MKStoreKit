@@ -489,7 +489,7 @@
 				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 8.0.0;
+				MARKETING_VERSION = 8.0.1;
 				MODULEMAP_FILE = Source/WSStoreKit.modulemap;
 				PRODUCT_BUNDLE_IDENTIFIER = co.whitesmith.WSStoreKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -523,7 +523,7 @@
 				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 8.0.0;
+				MARKETING_VERSION = 8.0.1;
 				MODULEMAP_FILE = Source/WSStoreKit.modulemap;
 				PRODUCT_BUNDLE_IDENTIFIER = co.whitesmith.WSStoreKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
